@@ -1,48 +1,131 @@
 <!DOCTYPE html>
-<html>
-	<head>
-	    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-	    <style type="text/css">
-	      html { height: 100% }
-	      body { height: 100%; margin: 0; padding: 0 }
-	      #menu-bar { height: 5%; width: 100%;}
-	      #container {height: 95%; width: 100%}
-	      #top-container { height: 75%; width: 80%; overflow: hidden;}
-	      #bottom-container { height: 20%; width: 80%; overflow: hidden; background-color: white;}
-	      #map-canvas { height: 100%; width: 100%; }
-	      #side-bar { height: 95%; width: 20%; float: right; background-color: white; color: black; text-align: center;}
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+
+  <title>Foundation 4</title>
+
+  
+  <link rel="stylesheet" href="css/foundation.css">
+  
+    	    <style type="text/css">
+	      #map-canvas { height: 500px;}
 	    </style>
-	    <script src="jquery-1.10.2.min.js"></script>
+
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+  	    <script src="jquery-1.10.2.min.js"></script>
 	    <script type="text/javascript"
 	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMfbcJAH81sfrsOLV6zykZcvFSUjG3X4E&sensor=false">
 	    </script>
 	    <script type="text/javascript" src="owc.js">
 		</script>
-	</head>
-	<body>
-		<div id="menu-bar">
+
+</head>
+<body>
+
+
+     <nav class="top-bar hide-for-small">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="/">Open World Cup</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="left">
+          <li class="divider"></li>
+          <li><a href="/grid.php">Map</a></li>
+          <li class="divider"></li>
+          <li><a href="/templates.php">Blog</a></li>
+        </ul>
+      </section>
+    </nav>
+
+
+	<div class="row">
+		<div class="large-9 columns">
+			<div class="object" id="map-canvas">
+
+			</div>
+			
 		</div>
-		<div id="container">
-			<div id="side-bar">
-	    		<h1 id="country-name"></h1>
-	    		<h1 id="player-name"></h1>
+
+		<div class="large-3 columns">
+			<h1 id="country-name"></h1>
+	    		
 	    		<p id='coach'></p>
 	    		<p id='captain'></p>
 	    		<p id='fifa-ranking'></p>
 	    		<p id='wins'></p>
 	    		<p id='draws'></p>
 	    		<p id='losses'></p>
-	    		<p id='club'></p>
-	    		<p id='country'></p>
-	    	</div>
-			<div id="top-container">
-		    	<div id="map-canvas">
-		    	</div>
-		    	
-	    	</div>
-	    	<div id="bottom-container">
-	    	</div>
 
-	    </div>
-	</body>
+		</div>
+	</div>
+
+		<div class="row">
+		<div class="large-12 columns">
+			<h1 id="player-name"></h1>
+			<p id='club'></p>
+	    	<p id='country'></p>
+		</div>
+	</div>
+
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="js/foundation.min.js"></script>
+  <!--
+  
+  <script src="js/foundation/foundation.js"></script>
+  
+  <script src="js/foundation/foundation.alerts.js"></script>
+  
+  <script src="js/foundation/foundation.clearing.js"></script>
+  
+  <script src="js/foundation/foundation.cookie.js"></script>
+  
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  
+  <script src="js/foundation/foundation.forms.js"></script>
+  
+  <script src="js/foundation/foundation.joyride.js"></script>
+  
+  <script src="js/foundation/foundation.magellan.js"></script>
+  
+  <script src="js/foundation/foundation.orbit.js"></script>
+  
+  <script src="js/foundation/foundation.reveal.js"></script>
+  
+  <script src="js/foundation/foundation.section.js"></script>
+  
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  
+  <script src="js/foundation/foundation.topbar.js"></script>
+  
+  <script src="js/foundation/foundation.interchange.js"></script>
+  
+  <script src="js/foundation/foundation.placeholder.js"></script>
+  
+  <script src="js/foundation/foundation.abide.js"></script>
+  
+  -->
+  
+  <script>
+    $(document).foundation();
+  </script>
+</body>
 </html>
