@@ -17,24 +17,24 @@
 
 		   	// Sets the map on all markers in the array.
 			function setAllMap(map) {
-			  for (var i = 0; i < playerMarkers.length; i++) {
-			    playerMarkers[i].setMap(map);
-			  }
+				for (var i = 0; i < playerMarkers.length; i++) {
+					playerMarkers[i].setMap(map);
+			  	}
 			}
 
 			// Removes the overlays from the map, but keeps them in the array.
 			function clearOverlays() {
-			  setAllMap(null);
+				setAllMap(null);
 			}
 
 			// Shows any overlays currently in the array.
 			function showOverlays() {
-			  setAllMap(map);
+				setAllMap(map);
 			}
 
 			function resetHtml() {
 
-	    		$("#player-name").text('');
+				$("#player-name").text('');
 			    $("#club").text('');
 			    $("#country").text('');
 
@@ -43,8 +43,8 @@
 			// Deletes all markers in the array by removing references to them.
 			function resetMap() {
 				resetHtml();
-			  clearOverlays();
-			  playerMarkers = [];
+				clearOverlays();
+				playerMarkers = [];
 			}
 
 		    function createMarker (coordinate, url, name, country, club) {
@@ -1564,7 +1564,7 @@
 				$("#country-name").text(nation);
             	});
 
-            	            	google.maps.event.addListener(japanLayer, 'click', function (e) {
+            	google.maps.event.addListener(japanLayer, 'click', function (e) {
             		var nation = 'Japan';
             		resetMap();
 
