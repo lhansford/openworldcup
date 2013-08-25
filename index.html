@@ -7,29 +7,34 @@
   <meta name="viewport" content="width=device-width">
 
 
-  <title>Foundation 4</title>
+  <title>Open World Cup</title>
 
   
   <link rel="stylesheet" href="css/foundation.css">
   
-    	    <style type="text/css">
-	      #map-canvas { height: 500px;}
+    	<style type="text/css">
+	      #map-canvas { height: 380px;}
+        #sidebar { text-align: center;}
+        .player-name {cursor: pointer;}
 	    </style>
+    <script src="jquery-1.10.2.min.js"></script>
 
 
   <script src="js/vendor/custom.modernizr.js"></script>
-  	    <script src="jquery-1.10.2.min.js"></script>
+
 	    <script type="text/javascript"
 	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMfbcJAH81sfrsOLV6zykZcvFSUjG3X4E&sensor=false">
-	    </script>
-	    <script type="text/javascript" src="owc.js">
-		</script>
+	    </script>  
+      <script type="text/javascript" src="geometry.js"></script>
+      <script type="text/javascript" src="js/markerclusterer.js"></script>
+      <script type="text/javascript" src="js/oms.min.js"></script>
+ <script type="text/javascript" src="owc.js"></script>
+
 
 </head>
-<body>
+<body>  
 
-
-     <nav class="top-bar hide-for-small">
+     <nav class="top-bar">
       <ul class="title-area">
         <!-- Title Area -->
         <li class="name">
@@ -60,23 +65,120 @@
 		</div>
 
 		<div class="large-3 columns">
-			<h1 id="country-name"></h1>
-	    		
-	    		<p id='coach'></p>
-	    		<p id='captain'></p>
-	    		<p id='fifa-ranking'></p>
-	    		<p id='wins'></p>
-	    		<p id='draws'></p>
-	    		<p id='losses'></p>
-
+      <div id="sidebar">
+			<h2 id="country-name"></h2>
+	    		<ul style="list-style: none;">
+            <li id="player-1" class="player-name"></li>
+            <li id="player-2" class="player-name"></li>
+            <li id="player-3" class="player-name"></li>
+            <li id="player-4" class="player-name"></li>
+            <li id="player-5" class="player-name"></li>
+            <li id="player-6" class="player-name"></li>
+            <li id="player-7" class="player-name"></li>
+            <li id="player-8" class="player-name"></li>
+            <li id="player-9" class="player-name"></li>
+            <li id="player-10" class="player-name"></li>
+            <li id="player-11" class="player-name"></li>
+            <li id="player-12" class="player-name"></li>
+            <li id="player-13" class="player-name"></li>
+            <li id="player-14" class="player-name"></li>
+        </ul>
+        </div>
 		</div>
 	</div>
 
 		<div class="row">
-		<div class="large-12 columns">
-			<h1 id="player-name"></h1>
-			<p id='club'></p>
-	    	<p id='country'></p>
+		<div class="large-9 columns">
+      <div class="section-container auto" data-section>
+  <section>
+    <p class="title" data-section-title><a href="#panel1">General</a></p>
+    <div class="content" data-section-content>
+      <div class="row">
+  <div class="small-3 large-3 columns">
+    <h3 id="image"></h3>
+
+
+  </div>
+  <div class="small-3 large-3 columns">
+      <p id="sec1-col1-1" class="stats"></p>
+      <p id='sec1-col1-2' class="stats"></p>
+      <p id='sec1-col1-3' class="stats"></p>
+      <p id='sec1-col1-4' class="stats"></p>
+  </div>
+  <div class="small-3 large-3 columns">
+      <p id='sec1-col2-1' class="stats"></p>
+      <p id='sec1-col2-2' class="stats"></p>
+      <p id='sec1-col2-3' class="stats"></p>
+      <p id='sec1-col2-4' class="stats"></p>
+  </div>
+    <div class="small-3 large-3 columns">
+      <p id='age' class="stats"></p>
+      <p id='position' class="stats"></p>
+      <p id='caps' class="stats"></p>
+  </div>
+</div>
+
+
+    </div>
+  </section>
+  <section>
+    <p class="title" data-section-title><a href="#panel2">Offensive</a></p>
+    <div class="content" data-section-content>
+            <div class="row">
+  <div class="small-3 large-3 columns">
+    <h3 id="image"></h3>
+
+  </div>
+  <div class="small-3 large-3 columns">
+      <p id="sec1-col1-1" class="stats">a</p>
+      <p id='sec1-col1-2' class="stats">b</p>
+      <p id='sec1-col1-3' class="stats">v</p>
+      <p id='sec1-col1-4' class="stats">v</p>
+  </div>
+  <div class="small-3 large-3 columns">
+      <p id='sec1-col2-1' class="stats">sda</p>
+      <p id='sec1-col2-2' class="stats">gsa</p>
+      <p id='sec1-col2-3' class="stats">adsf</p>
+      <p id='sec1-col2-4' class="stats">adsf</p>
+  </div>
+    <div class="small-3 large-3 columns">
+      <p id='age' class="stats"></p>
+      <p id='position' class="stats"></p>
+      <p id='caps' class="stats"></p>
+  </div>
+</div>
+    </div>
+  </section>
+    <section>
+    <p class="title" data-section-title><a href="#panel2">Defensive</a></p>
+    <div class="content" data-section-content>
+            <div class="row">
+  <div class="small-3 large-3 columns">
+    <h3 id="image"></h3>
+
+  </div>
+  <div class="small-3 large-3 columns">
+      <p id="sec1-col1-1" class="stats">a</p>
+      <p id='sec1-col1-2' class="stats">b</p>
+      <p id='sec1-col1-3' class="stats">v</p>
+      <p id='sec1-col1-4' class="stats">v</p>
+  </div>
+  <div class="small-3 large-3 columns">
+      <p id='sec1-col2-1' class="stats">sda</p>
+      <p id='sec1-col2-2' class="stats">gsa</p>
+      <p id='sec1-col2-3' class="stats">adsf</p>
+      <p id='sec1-col2-4' class="stats">adsf</p>
+  </div>
+    <div class="small-3 large-3 columns">
+      <p id='age' class="stats"></p>
+      <p id='position' class="stats"></p>
+      <p id='caps' class="stats"></p>
+  </div>
+</div>
+    </div>
+  </section>
+</div>
+
 		</div>
 	</div>
 
@@ -88,6 +190,17 @@
   </script>
   
   <script src="js/foundation.min.js"></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
+  
+   <script type="text/javascript">
+     $( ".player-name" ).click(function() {
+      var player_name = $( this ).text();
+      displayData(player_name);
+    });
+
+ </script>
+
+ 
   <!--
   
   <script src="js/foundation/foundation.js"></script>
@@ -114,7 +227,7 @@
   
   <script src="js/foundation/foundation.tooltips.js"></script>
   
-  <script src="js/foundation/foundation.topbar.js"></script>
+
   
   <script src="js/foundation/foundation.interchange.js"></script>
   

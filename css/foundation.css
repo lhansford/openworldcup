@@ -48,6 +48,14 @@ img {
 .map_canvas object {
   max-width: none !important; }
 
+#map-canvas img,
+#map-canvas embed,
+#map-canvas object,
+.map-canvas img,
+.map-canvas embed,
+.map-canvas object {
+  max-width: none !important; }
+
 .left {
   float: left !important; }
 
@@ -1052,7 +1060,7 @@ p {
   font-weight: normal;
   font-size: 1em;
   line-height: 1.6;
-  margin-bottom: 1.25em;
+  margin-bottom: 1em;
   text-rendering: optimizeLegibility; }
   p aside {
     font-size: 0.875em;
